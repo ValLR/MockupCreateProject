@@ -1,0 +1,100 @@
+.page-container {
+  padding: 70px;
+}
+
+.name-index {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 70px;
+}
+
+.name-index p {
+  text-align: center;
+  padding: 6px 5px;
+  color: white;
+  background: #2E74C2;
+}
+
+#newProject {
+  background-color: transparent;
+  border: 0px solid;
+  border-bottom: 1px solid black;
+  text-align: center;
+  font-weight: normal;
+  font-size: 25px
+}
+
+.projects-container {
+  display: flex;
+}
+
+.allResources-container {
+  width: 75%;
+  padding: 35px 60px;
+}
+
+.searchbar-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#project-searchBar {
+  text-align: center;
+  font-weight: normal;
+  font-size: 25px;
+  border: 1px solid #B2B2B2;
+  font-size:18px;
+  height: 100%;
+  width:90%;
+  padding: 1% 6%;
+}
+.guideIndex {
+  padding:2% 10%;
+}
+/* Input */
+.wrapper {
+  position: relative;
+}
+
+svg#search {
+  position: absolute;
+  top: 30%;
+  left: 2%;
+  color: #B2B2B2;
+}
+
+#project-searchBar::placeholder {
+  color: #B2B2B2;
+  font-weight: normal;
+  font-size: 120%;
+}
+
+.allResources-List {
+  display: flex;
+  padding: 25px 30px;
+  flex-wrap: wrap;
+}
+
+.resource {
+  width: 40%;
+  padding: 0 25px;
+}
+
+.resourceButton{
+  display: flex;
+  margin: 5px;
+}
+
+.resourceButton img{
+  margin: 0 10px;
+}
+
+a {
+  cursor: pointer;
+}
+
+.selected-container {
+  width: 25%;
+}
