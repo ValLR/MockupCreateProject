@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../createProjectPage.css'
 import FA from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/fontawesome-free-solid'
+import { faSearch, faTimesCircle } from '@fortawesome/fontawesome-free-solid'
 import gitIcon from '../images/github.png'
 import pivIcon from '../images/pivotal.png'
 import codeIcon from '../images/codeship.png'
@@ -115,7 +115,7 @@ class CreateProjectPage extends Component {
   }
 
   handleSubmit(event){
-    console.log(this.selectedResources)
+    console.log('Nombre del nuevo proyecto:', this.state.canonicalName,'Recursos seleccionados:',this.selectedResources)
     event.preventDefault();
   }
 
@@ -149,13 +149,13 @@ class CreateProjectPage extends Component {
             </div>
             <div className='selected-container'>
               <p>Recursos Seleccionados</p>
-              <ul>
-                {this.selectedResources.length !== 0 ? this.selectedResources.map((repository) => 
-                  <li key={repository.id}>{repository.name} <a onClick={(e) => this.handleDelete(e, repository)}>x</a></li>) : ''}
-              </ul>
+              {this.selectedResources.length !== 0 ? this.selectedResources.map((repository) => 
+                <div key={repository.id} className='listRow'>
+                  <ListIcon resource={repository} mode={'small'}/><a onClick={(e) => this.handleDelete(e, repository)}><FA id='delete' icon={faTimesCircle}/></a>
+                </div> ) : ''}
             </div>
           </div>
-          <input type='submit'/>
+          <input id='submit' type='submit' value='Crear Proyecto'/>
         </form>
       </div>
     )
@@ -173,8 +173,13 @@ class ListIcon extends Component {
     }[this.props.resource.service]
 
     return(
-      <div className='resourceButton'>
-        <img width='45' height='45' src={icon}/>
+      this.props.mode === 'medium' ?
+        <div className='resourceButton'>
+          <img width='45' height='45' src={icon}/>
+          <p>{this.props.resource.name}</p>
+        </div>
+      :<div className='listButton'>
+        <img width='20' height='20' src={icon}/>
         <p>{this.props.resource.name}</p>
       </div>
     )

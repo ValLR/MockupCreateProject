@@ -1,5 +1,5 @@
 .page-container {
-  padding: 70px;
+  padding: 40px;
 }
 
 .name-index {
@@ -11,6 +11,7 @@
 
 .name-index p {
   text-align: center;
+  margin: 20px;
   padding: 6px 5px;
   color: white;
   background: #2E74C2;
@@ -22,7 +23,7 @@
   border-bottom: 1px solid black;
   text-align: center;
   font-weight: normal;
-  font-size: 25px
+  font-size: 20px
 }
 
 .projects-container {
@@ -96,5 +97,47 @@ a {
 }
 
 .selected-container {
-  width: 25%;
+  padding: 30px 10px;
+  width: 30%;
+}
+
+.selected-container p{
+  margin: 0;
+  text-align: center;
+  padding: 10px 0;
+  color: white;
+  background: #2E74C2;
+  margin-bottom: 15px;
+}
+
+.listRow {
+  display: flex;
+  margin: 5px;
+}
+
+.listButton{
+  display:flex;
+  margin: 0;
+}
+
+.listButton img{
+  margin: 0 10px 3px 10px;
+}
+
+.listButton p{
+  color: black;
+  background: transparent;
+  padding: 0;
+}
+
+#delete {
+  margin: 0 10px;
+}
+
+#submit {
+  padding: 40px 140px;
+  font-size: 25px;
+  border:2px solid #2E74C2; 
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
