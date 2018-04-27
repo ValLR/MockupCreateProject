@@ -95,6 +95,10 @@ svg#search {
   margin: 5px;
 }
 
+.resourceButton p{
+  text-align: justify;
+}
+
 .resourceButton img{
   margin: 0 10px;
 }
@@ -133,6 +137,11 @@ a {
 
 .listButton img{
   margin: 0 10px 3px 10px;
+}
+
+p.noResourcesYet{
+  background: transparent !important;
+  color: grey !important;
 }
 
 .listButton p{

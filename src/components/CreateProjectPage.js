@@ -84,6 +84,7 @@ class CreateProjectPage extends Component {
     this.state = {
       canonicalName: '',
       search: '',
+      warning:'',
     }
     this.selectedResources = []
     this.handleChange = this.handleChange.bind(this)
@@ -91,6 +92,7 @@ class CreateProjectPage extends Component {
     this.handleDelete = this.handleDelete.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
+
 
   handleChange(event){
     this.setState({
@@ -117,6 +119,11 @@ class CreateProjectPage extends Component {
   }
 
   handleSubmit(event){
+    if(this.state.canonicalName === '' || this.selectedResources.length === 0){
+      this.setState({
+        warning: true
+      })
+    }
     console.log('Nombre del nuevo proyecto:', this.state.canonicalName,'Recursos seleccionados:',this.selectedResources)
     event.preventDefault();
   }
@@ -131,6 +138,7 @@ class CreateProjectPage extends Component {
           <div className='name-index'>
             <input type='text' id='newProject' value={this.state.canonicalName} onChange={this.handleChange.bind(this)}/>
             <p>Elige un nombre para el proyecto</p>
+            {this.state.warning&&this.state.canonicalName === '' ? 'Éste campo es obligatorio' : ''}
           </div>
           <div className='projects-container'>
             <div className='allResources-container'>
@@ -155,8 +163,9 @@ class CreateProjectPage extends Component {
                 {this.selectedResources.length !== 0 ? this.selectedResources.map((repository) => 
                   <div key={repository.id} className='listRow'>
                     <ListIcon resource={repository} mode={'small'}/><a onClick={(e) => this.handleDelete(e, repository)}><FA id='delete' icon={faTimesCircle}/></a>
-                  </div> ) : ''}
+                  </div> ) : <p className='noResourcesYet'>No has seleccionado ningún recurso aún</p>}
               </div>
+              {this.state.warning&&this.selectedResources.length === 0 ? 'Por favor, elige al menos un recurso' : ''}
             </div>
           </div>
           <input id='submit' type='submit' value='Crear Proyecto'/>
