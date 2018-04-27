@@ -37,7 +37,7 @@
 }
 
 .allResources-container {
-  width: 75%;
+  width: 60%;
   padding: 35px 60px;
 }
 
@@ -82,17 +82,16 @@ svg#search {
 .allResources-List {
   display: flex;
   padding: 25px 30px;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .resource {
-  width: 40%;
   padding: 0 25px;
 }
 
 .resourceButton{
   display: flex;
-  margin: 5px;
+  margin: 5px 150px;
 }
 
 .resourceButton p{
