@@ -99,7 +99,9 @@ class CreateProjectPage extends Component {
   }
 
   handleSelect(e, resource){
-    this.selectedResources.includes(resource) ? '' : this.selectedResources.push(resource)
+    if(!this.selectedResources.includes(resource)) {
+      this.selectedResources.push(resource)
+    }
     this.forceUpdate()
   }
 
@@ -125,7 +127,7 @@ class CreateProjectPage extends Component {
     })
     return(
       <div className='page-container'>
-        <form onSubmit={this.handleSubmit}>
+        <form className='submitForm' onSubmit={this.handleSubmit}>
           <div className='name-index'>
             <input type='text' id='newProject' value={this.state.canonicalName} onChange={this.handleChange.bind(this)}/>
             <p>Elige un nombre para el proyecto</p>
@@ -149,10 +151,12 @@ class CreateProjectPage extends Component {
             </div>
             <div className='selected-container'>
               <p>Recursos Seleccionados</p>
-              {this.selectedResources.length !== 0 ? this.selectedResources.map((repository) => 
-                <div key={repository.id} className='listRow'>
-                  <ListIcon resource={repository} mode={'small'}/><a onClick={(e) => this.handleDelete(e, repository)}><FA id='delete' icon={faTimesCircle}/></a>
-                </div> ) : ''}
+              <div className='list-container'>
+                {this.selectedResources.length !== 0 ? this.selectedResources.map((repository) => 
+                  <div key={repository.id} className='listRow'>
+                    <ListIcon resource={repository} mode={'small'}/><a onClick={(e) => this.handleDelete(e, repository)}><FA id='delete' icon={faTimesCircle}/></a>
+                  </div> ) : ''}
+              </div>
             </div>
           </div>
           <input id='submit' type='submit' value='Crear Proyecto'/>
@@ -175,11 +179,11 @@ class ListIcon extends Component {
     return(
       this.props.mode === 'medium' ?
         <div className='resourceButton'>
-          <img width='45' height='45' src={icon}/>
+          <img alt='' width='45' height='45' src={icon}/>
           <p>{this.props.resource.name}</p>
         </div>
       :<div className='listButton'>
-        <img width='20' height='20' src={icon}/>
+        <img alt='' width='20' height='20' src={icon}/>
         <p>{this.props.resource.name}</p>
       </div>
     )

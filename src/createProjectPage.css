@@ -1,17 +1,21 @@
 .page-container {
-  padding: 40px;
+  padding: 50px 40px 80px 40px;
+}
+
+.submitForm {
+  text-align: center;
 }
 
 .name-index {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 0 70px;
+  padding: 20px 90px;
 }
 
 .name-index p {
   text-align: center;
-  margin: 20px;
+  margin: 20px 70px;
   padding: 6px 5px;
   color: white;
   background: #2E74C2;
@@ -23,11 +27,13 @@
   border-bottom: 1px solid black;
   text-align: center;
   font-weight: normal;
-  font-size: 20px
+  font-size: 150%;
+  padding: 10px;
 }
 
 .projects-container {
   display: flex;
+  margin: 60px 0 45px 0;
 }
 
 .allResources-container {
@@ -39,6 +45,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding: 5px 60px;
 }
 
 #project-searchBar {
@@ -97,7 +104,7 @@ a {
 }
 
 .selected-container {
-  padding: 30px 10px;
+  padding: 40px 20px;
   width: 30%;
 }
 
@@ -110,9 +117,13 @@ a {
   margin-bottom: 15px;
 }
 
+.list-container{
+  margin: 45px 30px;
+}
+
 .listRow {
   display: flex;
-  margin: 5px;
+  margin: 15px 5px;
 }
 
 .listButton{
@@ -125,6 +136,7 @@ a {
 }
 
 .listButton p{
+  margin: 2px 0 0 0;
   color: black;
   background: transparent;
   padding: 0;
@@ -135,9 +147,11 @@ a {
 }
 
 #submit {
-  padding: 40px 140px;
-  font-size: 25px;
+  color: white;
+  padding: 15px 35px;
+  font-size: 20px;
   border:2px solid #2E74C2; 
   -webkit-border-radius: 5px;
   border-radius: 5px;
+  background: #2E74C2;
 }
